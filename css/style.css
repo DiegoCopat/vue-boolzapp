@@ -3,10 +3,16 @@
     margin: 0; 
     padding: 0;
 }
+body {
+    font-family: 'Roboto', sans-serif;
+}
 
 /* section common */
-h2 {
-    font-size: 13px;
+h3 {
+    font-size: 10px;
+}
+.active {
+    background-color: #E9EBEB;
 }
 /* background section */
 #background {
@@ -24,7 +30,7 @@ h2 {
     width: 100%; 
     height: calc(100% - 100px);
     background-color: #DADBD4;
-}
+} /* /background section */
 
 /* main section */
 main {
@@ -40,18 +46,23 @@ main {
 }
 
     /* section main left */
+    /* - MAIN USER - */
 #main-left {
     width: 35%;
     height: 100%;
     border-right: 1px solid #D6D6D6;
 }
+
 .nameUser {
+    display: flex;
     width: 100%;
     height: 50px;
     background-color: #EAEAEA;
-    padding: 8px;
+    padding: 8px 0 8px 8px;
 }
-.nameUserLeft {
+
+.nameUserLeft,
+.nameUserRight {
     display: flex;
     width: 50%;
     height: 100%;
@@ -61,43 +72,238 @@ main {
     height: 100%;
     border-radius: 50%;
     margin-right: 10px;
+    cursor: pointer;
 }
+.nameUserRight {
+    display: flex;
+    justify-content: flex-end;
+
+}
+.nameUserRight i {
+    font-size: 12px;
+    color: #B1B1B1;
+    margin-right: 15px;
+    cursor: pointer;
+}   /* - /MAIN USER - */
+
+    /* - NOTIFY - */
 .notify {
+    display: flex;
+    align-items: center;
     width: 100%;
     height: 55px; 
     background-color: #8EDAFC;
 }
+.notifyIcon {
+    display: flex; 
+    width: 35px;
+    height: 35px;
+    margin: 15px 8px 15px 15px;
+    background-color: white;
+    border-radius: 50%;
+}
+.notify i {
+    font-size: 15px;
+    margin: auto;
+    color: #8EDAFC;
+}
+.hnotify {
+    font-size: 10px;
+}
+.activatorNotify {
+    font-size: 9px;
+    text-decoration: underline;
+    color: #7E9685;
+    cursor: pointer;
+}    /* - /NOTIFY - */
+
+    /* - SEARCH -  */
 .search {
+    display: flex;
+    align-items: center;
     width: 100%; 
     height: 35px;
     background-color: #FFFFFF;
+    color: #B1B1B1;
+    padding-left: 25px;
 }
+.search button {
+    background-color: #FFFFFF;
+    color: #B1B1B1;
+    border: none;
+    cursor: pointer;
+}
+.search input {
+    width: 75%;
+    border: none;
+    margin: auto;
+    padding: 5px;
+    font-size: 9px;
+}       /* - /SEARCH -  */
+
+    /* - CONTACT -  */
 #contacts {
     width: 100%;
     height: calc(100% - (50px + 55px + 35px));
     background-color: #FFFFFF;
     overflow-y: scroll;
+}       
+.contact {
+    width: 100%; 
+    height: 55px;
+    display: flex;
+    align-items: center;
 }
+.contactIcon {
+    display: flex; 
+    width: 45px;
+    height: 45px;
+    margin: 15px 8px 15px 15px;
+    background-color: white;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.nameContact {
+    width: 40%;
+    height: 80%;
+    margin-left: 5px;
+}
+.nameContact div{
+    font-size: 12px;
+}
+.nameContact p {
+    font-size: 10px;
+    color: #B1B1B1;
+    margin-top: 2px;
+}
+.dateContact {
+    width: calc(100% - (40% + 75px));
+    display: flex;
+    justify-content: flex-end;
+    height: 80%;
+    font-size: 8px;
+    padding-right: 5px;
+    color: #B1B1B1;
+}   /* - /CONTACT -  */
 
-    /* section main right */
+/* section main right */
+
+    /* - SECTION TOP RIGHT -  */
 #main-right {
     width: 65%;
     height: 100%;
+}
+#main-right .nameUserLeft {
+    width: 8%;
 }
 .userNameMessage {
     width: 100%; 
     height: 50px;
     background-color: #EAEAEA;
 }
+.messageNameRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 60%;
+    font-size: 10px;
+}
+.messageNameRight p {
+    font-size: 8px;
+    color: #7E9685;
+}       /* - /SECTION TOP RIGHT -  */
+
+/* - SECTION CENTER RIGHT - */
 #message {
+    display: flex;
     width: 100%; 
     height: calc(100% - 100px);
     background-image: url(../img/mine.jpg);
     background-repeat: repeat;
     overflow-y: scroll;
 }
-.writeMessage {
-    width: 100%; 
-    height: 50px; 
+.message {
+    width: 80%;
+    height: 85%;
+    margin: auto;
+    /* border: 1px solid black; */
+}
+.receved {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+
+    /* border: 1px solid black; */
+}
+.inviated {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.inviated div {
+    background-color: #D5F9BA;
+}
+.receved div {
     background-color: #FFFFFF;
 }
+.receved div,
+.inviated div {
+    position: relative;
+    min-width: 40%;
+    max-width: 90%;
+    /* display: inline-block; */
+    padding: 10px 15px 13px 15px;
+    /* border: 1px solid black; */
+    margin-top: 5px;
+    border-radius: 10px; 
+    font-size: 9px;
+}
+.message span{
+    position: absolute;
+    bottom: 3px;
+    right: 5px;
+    font-size: 6px;
+    color: #B1B1B1;
+} /* - /SECTION CENTER RIGHT - */
+
+/* - SECTION SENDMESSAGE -  */
+.sendMessage {
+    display: flex;
+    width: 100%; 
+    height: 50px; 
+    justify-content: space-between;
+    align-items: center;
+    background-color: #F3EEEA;
+}
+.sendMessage .emoji,
+.sendMessage .vocal {
+    display: flex;
+    width: 80px;
+    height: 100%;
+    font-size: 15px;
+    cursor: pointer;
+}
+.text {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    height: 100%;
+    margin: auto;
+}
+.sendMessage input{
+    width: 100%;
+    height: 70%;
+    background-color: white;
+    border: none;
+    margin: auto;
+    padding: 15px;
+    font-size: 10px;
+    border-radius: 5px;
+}
+.sendMessage i {
+    margin: auto;
+}
+
+/* - SECTION SENDMESSAGE -  */

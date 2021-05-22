@@ -4,6 +4,8 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
         <link rel="stylesheet" href="css/style.css">
@@ -21,18 +23,93 @@
                 <div class="nameUser">
                     <div class="nameUserLeft">
                         <img src="img/avatar_io.jpg" alt="">
-                        <h2>Nome Utente</h2>
+                        <h3>Nome Utente</h3>
                     </div>
-                    <div class="nameUserRight"></div>
+                    <div class="nameUserRight">
+                        <i class="fas fa-circle-notch"></i>
+                        <i class="fas fa-comment-alt"></i>
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>
                 </div>
-                <div class="notify"></div>
-                <div class="search"></div>
-                <div id="contacts"></div>
+                <div class="notify">
+                    <div class="notifyIcon">
+                        <i class="fas fa-bell-slash"></i>
+                    </div>
+                    <div>
+                        <div class="hnotify">Ricevi notifiche di nuovi messaggi</div>
+                        <a class="activatorNotify" href="">Attiva notifiche despktop</a>
+                    </div>
+                    
+                </div>
+                <div class="search">
+                    <button><i class="fas fa-search"></i></button>
+                    
+                    <input type="text" placeholder="Cerca o inizia una nuova chat">
+                </div>
+                <div id="contacts">
+                    <div class="contact active">
+                        <div class="contactIcon">
+                            <img src="img/avatar_1.jpg" alt="">
+                        </div>
+                        <div class="nameContact">
+                            <div>Michele</div>
+                            <p>Tutto fatto! ... </p>
+                        </div>
+                        <div class="dateContact">
+                            <div>10/01/2020 16:15:22</div>
+                        </div>
+                    </div>
+                </div>
             </section>
             <section id="main-right">
-                <div class="userNameMessage"></div>
-                <div id="message"></div>
-                <div class="writeMessage"></div>
+                <div class="userNameMessage">
+                    <div class="nameUser">
+                        <div class="nameUserLeft">
+                            <img src="img/avatar_io.jpg" alt="">
+                        </div>
+                        <div class="messageNameRight">
+                            <div>Michele</div>
+                            <p>Ultimo accesso oggi alle 10/01/2020 16:15:22 </p>
+                        </div>
+                        <div class="nameUserRight">
+                            <i class="fas fa-circle-notch"></i>
+                            <i class="fas fa-comment-alt"></i>
+                            <i class="fas fa-ellipsis-v"></i>
+                        </div>
+                    </div>
+                </div>
+                <div id="message">
+                    <div class="message">
+                        <div class="inviated">
+                            <div>
+                                <p>Hai portato a spasso il cane?</p>
+                                <span>10/01/2020 15:30:55</span>
+                            </div>
+                            <div>
+                                <p>Ricordati di dargli da mangiare</p> 
+                                <span>10/01/2020 15:30:55</span>
+
+                            </div>
+                        </div>
+                        <div class="receved">
+                            <div>
+                                <p>tutto fatto!</p>
+                                <span>10/01/2020 15:30:55</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sendMessage">
+                    <div class="emoji">
+                        <i class="far fa-smile"></i>
+                    </div>
+                    <div class="text">
+                        <input type="text" placeholder="Scrivi un messaggio">
+                    </div>
+                    <div class="vocal">
+                        <i class="fas fa-microphone"></i>
+                    </div>
+                </div>
             </section>
         </main>
         <!-- collegamento del file js -->
