@@ -226,9 +226,10 @@ main {
     width: 80%;
     height: 85%;
     margin: auto;
+
     /* border: 1px solid black; */
 }
-.receved {
+section.received {
     display: flex;
     width: 100%;
     flex-direction: column;
@@ -236,20 +237,20 @@ main {
 
     /* border: 1px solid black; */
 }
-.inviated {
+section.sent {
     display: flex;
     width: 100%;
     flex-direction: column;
     align-items: flex-end;
 }
-.inviated div {
+div.sent {
     background-color: #D5F9BA;
 }
-.receved div {
+div.received {
     background-color: #FFFFFF;
 }
-.receved div,
-.inviated div {
+div.received,
+div.sent {
     position: relative;
     min-width: 40%;
     max-width: 90%;

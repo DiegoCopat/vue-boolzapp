@@ -18,58 +18,13 @@
             <div id="backBottom"></div>
         </section>
 
-        <main>
-            <section id="main-left">
-                <div class="nameUser">
-                    <div class="nameUserLeft">
-                        <img src="img/avatar_io.jpg" alt="">
-                        <h3>Nome Utente</h3>
-                    </div>
-                    <div class="nameUserRight">
-                        <i class="fas fa-circle-notch"></i>
-                        <i class="fas fa-comment-alt"></i>
-                        <i class="fas fa-ellipsis-v"></i>
-                    </div>
-                </div>
-                <div class="notify">
-                    <div class="notifyIcon">
-                        <i class="fas fa-bell-slash"></i>
-                    </div>
-                    <div>
-                        <div class="hnotify">Ricevi notifiche di nuovi messaggi</div>
-                        <a class="activatorNotify" href="">Attiva notifiche despktop</a>
-                    </div>
-                    
-                </div>
-                <div class="search">
-                    <button><i class="fas fa-search"></i></button>
-                    
-                    <input type="text" placeholder="Cerca o inizia una nuova chat">
-                </div>
-                <div id="contacts">
-                    <div class="contact active">
-                        <div class="contactIcon">
-                            <img src="img/avatar_1.jpg" alt="">
-                        </div>
-                        <div class="nameContact">
-                            <div>Michele</div>
-                            <p>Tutto fatto! ... </p>
-                        </div>
-                        <div class="dateContact">
-                            <div>10/01/2020 16:15:22</div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section id="main-right">
-                <div class="userNameMessage">
+        <section id="root">
+            <main>
+                <section id="main-left">
                     <div class="nameUser">
                         <div class="nameUserLeft">
                             <img src="img/avatar_io.jpg" alt="">
-                        </div>
-                        <div class="messageNameRight">
-                            <div>Michele</div>
-                            <p>Ultimo accesso oggi alle 10/01/2020 16:15:22 </p>
+                            <h3>Nome Utente</h3>
                         </div>
                         <div class="nameUserRight">
                             <i class="fas fa-circle-notch"></i>
@@ -77,41 +32,82 @@
                             <i class="fas fa-ellipsis-v"></i>
                         </div>
                     </div>
-                </div>
-                <div id="message">
-                    <div class="message">
-                        <div class="inviated">
-                            <div>
-                                <p>Hai portato a spasso il cane?</p>
-                                <span>10/01/2020 15:30:55</span>
+                    <div class="notify">
+                        <div class="notifyIcon">
+                            <i class="fas fa-bell-slash"></i>
+                        </div>
+                        <div>
+                            <div class="hnotify">Ricevi notifiche di nuovi messaggi</div>
+                            <a class="activatorNotify" href="">Attiva notifiche despktop</a>
+                        </div>
+                        
+                    </div>
+                    <div class="search">
+                        <button><i class="fas fa-search"></i></button>
+                        
+                        <input type="text" placeholder="Cerca o inizia una nuova chat">
+                    </div>
+                    <div id="contacts">
+                        <div v-for="(contact, index) in contacts" 
+                        class="contact" 
+                        @click="getUserActive(index)"
+                        :class="index == userNumber ? 'active' : ''"
+                        >
+                            <div class="contactIcon">
+                                <img :src="getSrcUsersImage(index)" :alt="contacts[userNumber].name">
                             </div>
-                            <div>
-                                <p>Ricordati di dargli da mangiare</p> 
-                                <span>10/01/2020 15:30:55</span>
-
+                            <div class="nameContact">
+                                <div>{{ getUsersName(index) }}</div>
+                                <p >{{ getLastMessage(index) }}</p>
+                            </div>
+                            <div class="dateContact">
+                                <div>10/01/2020 16:15:22</div>
                             </div>
                         </div>
-                        <div class="receved">
-                            <div>
-                                <p>tutto fatto!</p>
-                                <span>10/01/2020 15:30:55</span>
+                    </div>
+                </section>
+                <section id="main-right">
+                    <div class="userNameMessage">
+                        <div class="nameUser">
+                            <div class="nameUserLeft">
+                                <img :src="getSrcUsersImage(userNumber)" :alt="contacts[userNumber].name">
+                            </div>
+                            <div class="messageNameRight">
+                                <div>{{ contacts[userNumber].name }}</div>
+                                <p>Ultimo accesso oggi alle 10/01/2020 16:15:22 </p>
+                            </div>
+                            <div class="nameUserRight">
+                                <i class="fas fa-circle-notch"></i>
+                                <i class="fas fa-comment-alt"></i>
+                                <i class="fas fa-ellipsis-v"></i>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="sendMessage">
-                    <div class="emoji">
-                        <i class="far fa-smile"></i>
+                    <div id="message">
+                        <div class="message" >
+                            <section v-for="(message, index) in contacts[userNumber].messages" :class="message.status">
+                                <div :class="message.status">
+                                    <p>{{ message.text }}</p>
+                                    <span>10/01/2020 15:30:55</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="text">
-                        <input type="text" placeholder="Scrivi un messaggio">
+                    <div class="sendMessage">
+                        <div class="emoji">
+                            <i class="far fa-smile"></i>
+                        </div>
+                        <div class="text">
+                            <input type="text" placeholder="Scrivi un messaggio">
+                        </div>
+                        <div class="vocal">
+                            <i class="fas fa-microphone"></i>
+                        </div>
                     </div>
-                    <div class="vocal">
-                        <i class="fas fa-microphone"></i>
-                    </div>
-                </div>
-            </section>
-        </main>
+                </section>
+            </main>
+        </section>
+        
         <!-- collegamento del file js -->
         <script src="js/script.js"></script>
     </body>
