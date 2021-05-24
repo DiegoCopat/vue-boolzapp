@@ -106,7 +106,12 @@ var app= new Vue ({
         },
         getUserActive: function(userIndex) {
             this.userNumber = userIndex;
-        }   
+        },
+        getLastDate: function(userIndex) {
+            const messages = this.contacts[userIndex].messages;
+            return messages[messages.length - 1].date;
+        }
+
         
     }
 });

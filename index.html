@@ -61,7 +61,7 @@
                                 <p >{{ getLastMessage(index) }}</p>
                             </div>
                             <div class="dateContact">
-                                <div>10/01/2020 16:15:22</div>
+                                <div>{{ getLastDate(index) }}</div>
                             </div>
                         </div>
                     </div>
@@ -88,7 +88,7 @@
                             <section v-for="(message, index) in contacts[userNumber].messages" :class="message.status">
                                 <div :class="message.status">
                                     <p>{{ message.text }}</p>
-                                    <span>10/01/2020 15:30:55</span>
+                                    <span>{{ message.date }}</span>
                                 </div>
                             </div>
                         </div>
