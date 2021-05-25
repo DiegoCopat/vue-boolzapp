@@ -91,7 +91,8 @@ var app= new Vue ({
                 ],
             }
         ],
-        userNumber: 0        
+        userNumber: 0,
+        newMessage: ""
     },
     methods: {
         getSrcUsersImage: function(userIndex) {
@@ -110,7 +111,19 @@ var app= new Vue ({
         getLastDate: function(userIndex) {
             const messages = this.contacts[userIndex].messages;
             return messages[messages.length - 1].date;
+        },
+        addMessage: function() {
+            console.log(this.newMessage);
+            this.contacts[this.userNumber].messages.push(
+                {
+                    date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+                    message: this.newMessage,
+                    status: "sent"
+                }
+            );
+            this.newMessage = "";
         }
+
 
         
     }
