@@ -8,11 +8,22 @@ body {
 }
 
 /* section common */
-h3 {
+h2 {
     font-size: 10px;
 }
 .active {
     background-color: #E9EBEB;
+}
+.hidden {
+    display: none;
+}
+i:hover {
+    opacity: 0.7;
+    transform: scale(1.5, 1.5);
+    transition: all linear 0.5s; 
+}
+i {
+    transition: transform linear 0.5s;
 }
 /* background section */
 #background {
@@ -43,6 +54,8 @@ main {
     transform: translate(-50%, -50%);
     background-color: grey;
     border: 1px solid #D6D6D6;
+    border-radius: 5px;
+    overflow: hidden;
 }
 
     /* section main left */
@@ -113,7 +126,7 @@ main {
 .activatorNotify {
     font-size: 9px;
     text-decoration: underline;
-    color: #7E9685;
+    color: grey;
     cursor: pointer;
 }    /* - /NOTIFY - */
 
@@ -154,6 +167,12 @@ main {
     display: flex;
     align-items: center;
 }
+.contact:hover {
+    opacity: 0.8;
+    background-color: rgb(243, 240, 240);
+    border-radius: 20px 0 20px 0;
+
+}
 .contactIcon {
     display: flex; 
     width: 45px;
@@ -168,8 +187,9 @@ main {
     height: 80%;
     margin-left: 5px;
 }
-.nameContact div{
+.nameContact h3{
     font-size: 12px;
+    font-weight: 500;
 }
 .nameContact p {
     font-size: 10px;
@@ -206,7 +226,10 @@ main {
     flex-direction: column;
     justify-content: center;
     width: 60%;
-    font-size: 10px;
+}
+.messageNameRight h3{
+    font-size: 12px;
+    font-weight: 500;
 }
 .messageNameRight p {
     font-size: 8px;

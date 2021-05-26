@@ -92,7 +92,10 @@ var app= new Vue ({
             }
         ],
         userNumber: 0,
-        newMessage: ""
+        newMessage: "",
+        searchName: "",
+        hidden: true,
+        style: ""
     },
     methods: {
         getSrcUsersImage: function(userIndex) {
@@ -117,14 +120,49 @@ var app= new Vue ({
             this.contacts[this.userNumber].messages.push(
                 {
                     date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
-                    message: this.newMessage,
+                    text: this.newMessage,
                     status: "sent"
                 }
             );
             this.newMessage = "";
+            setTimeout(() => {
+                this.contacts[this.userNumber].messages.push(
+                    {
+                        date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+                        text: "ok",
+                        status: "received"
+                    }
+                );
+            }, 1000);
+        },
+        searchUser: function() {
+     
+            this.contacts.map(
+                (contact) => {
+                    const name = contact.name;
+                    console.log(name);
+                    const search = this.searchName;
+                    console.log(search);
+                    const verify = name.toLowerCase().includes(search.toLowerCase()) ? true : false ;
+
+                    // console.log(verify);
+                    
+                    if (verify == !true) {
+                        contact.visible = "hidden";
+                        this.style = "'display:none;'";
+                        console.log(this.style);
+                    };
+                    this.hidden = contact.visible;
+                    // console.log(contact.visible)
+                    console.log(this.hidden);
+                }   
+            );
+            this.searchName = "";
         }
-
-
-        
+       
     }
 });
+
+
+
+
